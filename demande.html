@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestiti personali - Fiducia Credit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-transition"></div>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Fiducia Credit</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="simulation.html">Simulazione</a></li>
+                    <li><a href="demande.html">Richiedi</a></li>
+                    <li><a href="a-propos.html">Chi Siamo</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main id="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Richiedi il Tuo Prestito</h1>
+                <p>Compila il modulo sottostante. Un nostro consulente ti contatterà entro 24 ore.</p>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <form id="loan-request-form">
+                    <h3>Dati Personali</h3>
+                    <div class="form-group">
+                        <label for="full-name">Name e Cognome</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birth-date">Data di Nascita</label>
+                        <input type="date" id="birth-date" name="birth-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="codice-fiscale">Codice Fiscale</label>
+                        <input type="text" id="codice-fiscale" name="codice-fiscale" maxlength="16" required>
+                    </div>
+                    
+                    <h3>Informazioni di Contatto</h3>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefono</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <h3>Dettagli del Prestito Richiesto</h3>
+                    <div class="form-group">
+                        <label for="requested-amount">Importo Richiesto (€)</label>
+                        <input type="number" id="requested-amount" name="requested-amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="purpose">Finalità del Prestito</label>
+                        <select id="purpose" name="purpose">
+                            <option value="">-- Seleziona una opzione --</option>
+                            <option value="auto">Acquisto Auto/Moto</option>
+                            <option value="casa">Ristrutturazione Casa</option>
+                            <option value="viaggio">Viaggio</option>
+                            <option value="debiti">Consolidamento Debiti</option>
+                            <option value="personale">Spese Personali</option>
+                            <option value="altro">Altro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label >
+                            <input type="checkbox" name="privacy" required>
+                            Ho letto e accetto le <a href="mentions-legales.html">Note Legali </a> e la <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="verify-human" name="verify-human" required>
+                        <label for="verify-human">Confermo di essere una persona e non un robot automatizzato.</label>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <button type="submit" class="submit-button" disabled>Invia Richiesta</button>
+                    </div>
+                </form>
+                <div id="form-error-message" class="error-message">
+                    <p>Si prega di compilare tutti i campi obbligatori e accetttare i termini.</p>
+                </div>
+
+                <div id="form-success-message" class="success-message">
+                    <h3>Richiesta Inviata!</h3>
+                    <p>Grazie per la tua richiesta. Verrai ricontattato al più presto</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fiducia Credit. Tutti i diritti riservati.</p>
+            <ul>
+                <li><a href="mentions-legales.html">Note Legali</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>

@@ -1,0 +1,711 @@
+/* style.css */
+:root {
+    --primary-color: #004080;
+    --secondary-color: #00aaff;
+    --background-color: #f4f4f9;
+    --text-color: #333333;
+    --card-color: #ffffff;
+    --border-raduis: 8px
+}
+
+/* --- 1. Variables et Styles de Base --- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px; /* Ajoute un peu d'espace sur les bords */
+}
+
+/* --- 2. Header et Navigation --- */
+header {
+    background-color: var(--card-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Le header reste en haut quand on scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a{
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header nav a:hover {
+    transform: translateY(-2px);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* --- 3. Section Principale (Hero) --- */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 80px 20px; /* Plus d'espace vertical */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto; /* Centre le paragraphe */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: var(--border-raduis);
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.cta-button:hover {
+    background-color: #0088cc; /* Une couleur plus foncée au survol */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 4. Section des Caractéristiques (Features) --- */
+.features {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-grid:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.features-item {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: var(--border-raduis);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.features-item h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* --- 5. Footer --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;^
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+/* --- 6. Responsive Design pour Mobile --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* --- Styles pour les pages de contenu (comme "Chi Siamo") --- */
+.page-header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.page-content {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Centre le texte pour une meilleure lisibilité */
+}
+
+.page-content h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+/* --- Styles pour la page de contact --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Le formulaire prend 2/3, les infos 1/3 */
+    gap: 40px;
+    align-items: start; /* Aligne les éléments en haut */
+}
+
+.contact-form h2,
+.contact-info h2 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+/* Style pour les champs du formulaire */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-raduis);
+    box-sizing: border-box; /* Important pour que le padding ne déborde pas */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permet de redimensionner verticalement uniquement */
+}
+
+/* Style pour la section des informations */
+.info-item {
+    margin-bottom: 30px;
+}
+
+.info-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    margin: 0;
+    color: #555;
+}
+
+/* Responsive pour la page de contact */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;  /* Passe les colonnes en une seule sur mobile */
+        gap: 30px;
+    }
+    
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-content {
+        width: 100%;
+        padding: 0;
+    }
+ 
+    /* Cible TOUS les champs de saisie dans les formulaires */
+    .page-content form input,
+    .page-content form select,
+    .page-content form textarea {
+        width: 100%;
+        box-sizing: border-box; /* Très important pour que le padding ne dépasse pas */
+    }
+
+    /* S'assure que les labels et les checkboxes sont bien alignés */
+    .page-content form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+
+    .page-content form .form-group {
+        
+    }
+
+    .page-content form .form-group label {
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap; /* Permet au texte de passer à la ligne si nécessaire */
+    }
+
+    .page-content form .form-group input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    .page-content form .form-group a {
+        word-break: break-word; /* Permet aux liens de passer à la ligne si nécessaire */
+    }
+}
+
+/* --- Styles pour la page de simulation --- */
+.loan-simulator {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: var(--border-raduis);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.result-summary {
+    background-color: #eef7ff;
+    border-left: 5px solid var(--secondary-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: var(--border-raduis);
+}
+
+.result-summary p {
+    font-size: 1.1rem;
+    margin-top: 10px 0;
+}
+
+#results {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#results.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#amortization-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+#amortization-table th, #amortization-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#amortization-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- Animation d'apparition pour le tableau d'amortissement --- */
+#amortization-table tbody tr {
+    opacity: 0; /* On décale l'animation de chaque ligne pour un effet cascade */
+    animation: fadeInUp 0.5s ease-in-out forwards; /* Animation de fondu */
+}
+
+/* On décale l'animation de chaque ligne pour un effet cascade */
+#amortization-table-body tr:nth-child(1) { animation-delay: 0.05s; }
+#amortization-table-body tr:nth-child(2) { animation-delay: 0.1s; }
+#amortization-table-body tr:nth-child(3) { animation-delay: 0.15s; }
+#amortization-table-body tr:nth-child(4) { animation-delay: 0.2s; }
+#amortization-table-body tr:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;  /* À la fin de l'animation, la ligne est complètement visible */
+        transform: translateY(0);  /* À la fin de l'animation, la ligne est complètement visible */
+    }
+
+    form {
+        opacity: 0;
+        transform: translateY(10px);  /* À la fin de l'animation, la ligne est complètement visible */
+    }
+}
+
+#amortization-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-raduis);
+    background-color: white;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-group label:has(input[type="checkbox"]) {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+}
+
+/* --- Message de succès du formulaire --- */
+#form-success-message {
+    display: none; /* Caché par défaut */
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid #28a745;
+    background-color: #f8f9fa;
+    border-radius: var(--border-raduis);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#form-success-message.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#form-success-message h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+/* --- Styles pour le message de succès --- */
+.success-message {
+    background-color: #e8f5e9;
+    border: 1px solid #4caf50;
+    color: #2e7d32;
+    padding: 20px;
+    border-radius: var(--border-raduis);
+    text-align: center;
+    margin-top: 30px;
+    display: none; /* Caché par défaut */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* --- Classe pour rendre le message visible avec une animation --- */
+.success-message.visible {
+    opacity: 1; /* Devient complètement visible */
+    transform: translateY(0); /* Devient complètement visible */
+}
+
+/* --- Styles pour le loader --- */
+.loader {
+    display: none; /* Caché par défaut */
+    text-align: center;
+    padding: 20px;
+    color: var(--primary-color)
+}
+
+.loader .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.chart-container {
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+#lonChart {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- Styles pour le message d'erreur --- */
+.error-message {
+    background-color: #ffebee; /* Rouge clair */
+    border: 1px solid #f44336;
+    color: #c62828;
+    padding: 15px;
+    border-radius: var(--border-raduis);
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style pour mettre en évidence la checkbox de vérification */
+.page-content form .form-group:has(input[type="checkbox"][id="verify-human"]) {
+    border: 1px dashed var(--primary-color);
+    padding: 15px;
+    border-radius: var(--border-raduis);
+    background-color: var(--background-color);
+    margin-bottom: 10px;
+}
+
+/* --- Style pour les boutons DÉSACTIVÉS (gris) --- */
+button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+    border: 1px solid #ddd;
+}
+
+/* --- Style pour les boutons ACTIFS --- */
+button:not(:disabled) {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border:none;
+    border-radius: var(--border-raduis);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:not(:disabled) :hover {
+    background-color: #0056b3;
+}
+
+/* Style de focus général pour tous les éléments interactifs */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* S'assurer que les liens dans le menu ont un style de focus visible */
+header nav a:focus {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-raduis);
+}
+
+/* --- Skip Link --- */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* --- Classes pour les animations au défilement --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Classes pour les animations au défilement --- */
+.button-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: relative;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.page-transition.active {
+    opacity: 1;
+}
+
+.results {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#loanChart {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 300px;
+}
+
+#amortization-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.results {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#amortization-table th,
+#amortization-table td {
+    padding: 10px 8px;
+    white-space: nowrap;
+}
+
+#amortization-table th:first-child,
+#amortization-table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+    border-right: 2px solid #eee;
+}
+
+/* --- Style pour le bouton secondaire "Effacer" --- */
+.secondary-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: var(--border-raduis);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
